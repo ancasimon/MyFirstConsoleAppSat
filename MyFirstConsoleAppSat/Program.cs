@@ -148,7 +148,7 @@ namespace MyFirstConsoleAppSat
 
             Console.WriteLine($"Hello, { input }");
 
-            Console.WriteLine("please enter a comma-separated lisy of numbers"); 
+            Console.WriteLine("please enter a comma-separated list of numbers"); 
             var inputNumbers = Console.ReadLine();
 
             var numbers = inputNumbers.Split(',');
