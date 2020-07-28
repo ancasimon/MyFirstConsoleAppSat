@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Net.WebSockets;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
+using System.Xml;
 
 namespace MyFirstConsoleAppSat
 {
@@ -36,7 +37,7 @@ namespace MyFirstConsoleAppSat
 
             var myFirstString = "This is a string";
             //myFirstString = true; --this would not work / you could not change the string variable to a boolean!! this variable is still statically typed!!!
-
+             
             char oneCharacter = 'c';
 
             DateTime today = DateTime.Now;
@@ -92,6 +93,72 @@ namespace MyFirstConsoleAppSat
             //names[3] = "Anca";
 
             Console.WriteLine(greeting2);
+
+            var shouldExecute = true;
+
+            if (string.IsNullOrEmpty(name))
+            {
+                Console.WriteLine($"{name} was in the name variable." );
+
+            }
+
+            switch (oneCharacter)
+            {
+                case 'a' :
+                case 'b' : 
+                    Console.WriteLine("It's the letter a");
+                    break;
+                    //break means stop executing in this block of code; find the closest set of curly braces and leave them;
+                case 'c' :
+                    Console.WriteLine("It's the letter C");
+                    break;
+                default :
+                    Console.WriteLine("It wasn't a or c");
+                    break;
+            }
+
+            for (int i = 0; i < names.Length; i++)
+            {
+                if ( i < 3)
+                {
+                    //this says: loop from i=0 to this array's length and if the i of the item is less than 3, then continue/ which means skip the current iteration and do the next iteration of the loop; aka: we are done with this iteration / go to the next one!
+                    continue;
+                    //continue versus break: continue says stay in the loop but exit this iteration; break says stop this iteration;
+                }
+                Console.WriteLine($"The current name is {names[i]}.");
+            }
+
+            //foreach loop will loop over each thing in the array you specify and it will put it in the item variable.
+            foreach (var thing in names)
+            {
+                Console.WriteLine($"The current name is {thing}.");
+            } 
+
+            while (true)
+            {
+                if (DateTime.Now > new DateTime(2020,7,27,19,24,15))
+                {
+                    break;
+                }
+            }
+
+
+            Console.WriteLine("please enter your name"); //this will prompt the user to write their name!
+            var input = Console.ReadLine(); //when the user hits the Enter key, that's when we get the value from them!! to store that input value, we create a variable!!
+
+            Console.WriteLine($"Hello, { input }");
+
+            Console.WriteLine("please enter a comma-separated lisy of numbers"); 
+            var inputNumbers = Console.ReadLine();
+
+            var numbers = inputNumbers.Split(',');
+            //split allows you to take a string and identify a character to use to separate the string!
+
+            foreach (var number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+
         }
     }
 }
