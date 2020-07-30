@@ -152,7 +152,7 @@ namespace MyFirstConsoleAppSat
             var inputNumbers = Console.ReadLine();
 
             var numbers = inputNumbers.Split(',');
-            //split allows you to take a string and identify a character to use to separate the string!
+            //split allows you to take a string and identify a character that is separating parts of the string and remove it in order to create a new string that combines the other characters, minus the one passed in as argument!
 
             foreach (var number in numbers)
             {
